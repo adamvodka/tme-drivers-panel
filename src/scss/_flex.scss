@@ -1,0 +1,41 @@
+//Flex
+
+.flex {
+  display: flex;
+  &.j {
+    &-sb {
+      justify-content: space-between;
+    }
+    &-sa {
+      justify-content: space-around;
+    }
+    &-c {
+      justify-content: center;
+    }
+    &-fs {
+      justify-content: flex-start;
+    }
+    &-fe {
+      justify-content: flex-end;
+    }
+  }
+  &.a {
+    &-c {
+      align-items: center;
+    }
+    &-fa {
+      align-items: flex-start;
+    }
+    &-fe {
+      align-items: flex-end;
+    }
+  }
+  &.d {
+    &-row {
+      flex-direction: row;
+    }
+    &-col {
+      flex-direction: column;
+    }
+  }
+}
