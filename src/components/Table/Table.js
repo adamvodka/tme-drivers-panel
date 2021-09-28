@@ -6,7 +6,7 @@ export const Table = () => {
   return (
     <div className="table">
       <header className="table__header flex j-sb a-c">
-        <h2>tabela kierowców</h2>
+        <h2>Drivers</h2>
         <input placeholder="wyszukajka" />
       </header>
       <main className="table__container">

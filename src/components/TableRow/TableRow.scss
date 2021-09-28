@@ -1,18 +1,31 @@
 .tableRow {
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 2px;
   &__container {
     &--image {
-      width: 50px;
+      width: 60px;
     }
     &--data {
       margin: 0 auto 0 20px;
       .data__plate > * + *,
       .data__driverData > * + * {
+        margin: 0 auto 0 10px;
+      }
+      .data__plate > p > * + *,
+      .data__driverData > p > * + * {
         margin: 0 0 0 10px;
+        font-weight: bold;
+      }
+      button {
+        padding: 3px 5px;
       }
     }
     &--favourite {
+      height: fit-content;
       svg {
         fill: lightgray;
+        transition: all 0.5s ease;
       }
       &.active {
         svg {
