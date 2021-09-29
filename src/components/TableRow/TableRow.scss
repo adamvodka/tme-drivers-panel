@@ -4,7 +4,8 @@
   margin-bottom: 2px;
   &__container {
     &--image {
-      width: 60px;
+      max-width: 60px;
+      max-height: 60px;
     }
     &--data {
       margin: 0 auto 0 20px;
@@ -18,11 +19,25 @@
         font-weight: bold;
       }
       button {
-        padding: 3px 5px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: 1px solid black;
+      }
+      .data__hidden {
+        display: none;
+        &.visible {
+          display: unset;
+          padding: 5px 0;
+          p > span p > * + * {
+            margin: 0 0 0 10px;
+            font-weight: bold;
+          }
+        }
       }
     }
     &--favourite {
       height: fit-content;
+      cursor: pointer;
       svg {
         fill: lightgray;
         transition: all 0.5s ease;
