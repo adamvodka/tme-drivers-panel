@@ -1,11 +1,18 @@
+@import "../../index.scss";
 .tableRow {
   position: relative;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   margin-bottom: 3px;
+  &:hover {
+    background-color: $white;
+  }
   &__container {
     &--image {
       max-width: 60px;
       max-height: 60px;
+      img {
+        border-radius: 5px;
+      }
     }
     &--data {
       margin: 0 auto 0 20px;
@@ -23,11 +30,7 @@
       * + button {
         margin-left: 20px;
       }
-      button {
-        padding: 5px 10px;
-        border-radius: 5px;
-        border: 1px solid black;
-      }
+
       .data__hidden {
         display: none;
         &.visible {
@@ -44,12 +47,12 @@
       height: fit-content;
       cursor: pointer;
       svg {
-        fill: lightgray;
+        fill: $gray;
         transition: all 0.5s ease;
       }
       &.active {
         svg {
-          fill: red;
+          fill: $orange;
         }
       }
     }
