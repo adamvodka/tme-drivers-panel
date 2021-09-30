@@ -3,12 +3,42 @@ import "./TableRow.scss";
 import { HeartIcon } from "../../img/Heart";
 import { useState } from "react";
 
-export const TableRow = () => {
-  const [favourite, setFavourite] = useState(false);
+// import { Link } from "react-router-dom";
+
+export const TableRow = ({
+  index,
+  isFavourite,
+  picture,
+  name,
+  surname,
+  email,
+  phone,
+  latitude,
+  longitude,
+  plate,
+  speed,
+  _id,
+}) => {
+  const [favourite, setFavourite] = useState(isFavourite);
   const [hidden, setHidden] = useState(false);
+  // const [driver, setDriver] = useState({
+  //   index: index,
+  //   isFavourite: isFavourite,
+  //   picture: picture,
+  //   name: name,
+  //   surname: surname,
+  //   email: email,
+  //   phone: phone,
+  //   latitude: latitude,
+  //   longitude: longitude,
+  //   plate: plate,
+  //   speed: speed,
+  //   _id: _id,
+  // });
 
   const hiddenHandler = () => {
     setHidden(!hidden);
+    // console.log(driver);
   };
 
   const favouriteHandler = () => {
@@ -20,8 +50,12 @@ export const TableRow = () => {
     document.removeEventListener("click", onClickOutsideListener);
   };
 
+  function driverDetail() {
+    window.open(`/driver/${_id}`, "driver detail", "width=626,height=436");
+  }
+
   return (
-    <div
+    <li
       className="tableRow"
       onMouseLeave={() => {
         document.addEventListener("click", onClickOutsideListener);
@@ -29,15 +63,18 @@ export const TableRow = () => {
     >
       <div className="tableRow__container flex">
         <div className="tableRow__container--image flex a-st">
-          <img src="https://picsum.photos/200" alt="driver avatar" />
+          <img src={picture} alt="driver avatar" />
         </div>
         <div className="tableRow__container--data flex d-col j-sb">
           <div className="data__plate flex a-c">
             <p>
               <span>Numer rejestracyjny</span>
-              <span>ABC 1234</span>
+              <span>{plate}</span>
             </p>
             <button onClick={hiddenHandler}>więcej</button>
+            <button onClick={driverDetail}>więcej</button>
+
+            {/* <Link to={`/driver.no/${driver.index}`}>Detale kierowcy</Link> */}
           </div>
           <div className={!hidden ? "data__hidden" : "data__hidden visible"}>
             <div className="flex d-col">
@@ -54,17 +91,21 @@ export const TableRow = () => {
           </div>
           <div className="data__driverData flex">
             <p>
-              <span>Kierowca:</span> <span>Jonhy Dee</span>
+              <span>Kierowca:</span>
+              <span>{name}</span>
+              <span>{surname}</span>
             </p>
             <p>
-              <span>Telefon:</span> <span>321654987</span>
+              <span>Telefon:</span> <span>{phone}</span>
             </p>
             <p>
-              <span>współrzędne geograficzne:</span>
-              <span>81.713316 / -133.431669</span>
+              <span>Współrzędne geograficzne:</span>
+              <span>
+                {latitude} / {longitude}
+              </span>
             </p>
             <p>
-              <span>Śr. prędkość::</span> <span>90</span>
+              <span>Śr. prędkość:</span> <span>{speed}</span>
             </p>
           </div>
         </div>
@@ -79,6 +120,6 @@ export const TableRow = () => {
           <HeartIcon />
         </div>
       </div>
-    </div>
+    </li>
   );
 };

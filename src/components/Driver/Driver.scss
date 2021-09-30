@@ -1,0 +1,28 @@
+.driver {
+  padding: 20px 30px;
+  width: 100vw;
+  height: 100vh;
+  button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    min-width: 200px;
+  }
+  .driver-header {
+    border-bottom: 1px double lightgrey;
+    padding-bottom: 10px;
+  }
+  .driver-data__container {
+    height: 85%;
+    .content > * + * {
+      margin-top: 10px;
+    }
+    .avatar {
+      img {
+        border-radius: 10px;
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}

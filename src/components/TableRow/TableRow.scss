@@ -1,7 +1,7 @@
 .tableRow {
   position: relative;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  margin-bottom: 2px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 3px;
   &__container {
     &--image {
       max-width: 60px;
@@ -9,7 +9,6 @@
     }
     &--data {
       margin: 0 auto 0 20px;
-      .data__plate > * + *,
       .data__driverData > * + * {
         margin: 0 auto 0 10px;
       }
@@ -17,6 +16,12 @@
       .data__driverData > p > * + * {
         margin: 0 0 0 10px;
         font-weight: bold;
+      }
+      .data__driverData > p ~ span {
+        font-size: 12px;
+      }
+      * + button {
+        margin-left: 20px;
       }
       button {
         padding: 5px 10px;
