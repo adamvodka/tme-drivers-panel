@@ -1,6 +1,7 @@
 import "./Table.scss";
 
 import { TableRow } from "../TableRow/TableRow";
+import closeico from "../../img/close-circle.svg";
 import { data as drivers } from "../../database/data";
 import { useState } from "react";
 
@@ -21,17 +22,28 @@ export const Table = () => {
         )
       : drivers;
   };
+  const clearSearchHandler = () => {
+    setSearchTerm("");
+  };
 
   return (
     <div className="table">
       <header className="table__header flex j-sb a-c">
         <h2>Drivers</h2>
-        <input
-          type="text"
-          placeholder="wyszukajka"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+        <div className="searchBar">
+          <input
+            type="text"
+            placeholder="Szukaj..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <img
+            src={closeico}
+            alt=""
+            className={searchTerm === "" ? "hidden" : "visible"}
+            onClick={clearSearchHandler}
+          />
+        </div>
       </header>
       <main className="table__container">
         <ul>

@@ -1,3 +1,5 @@
+import "./App.scss";
+
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import { Driver } from "./components/Driver/Driver";
@@ -13,6 +15,12 @@ function App() {
         <Route path="/">
           <div className="app">
             <TME />
+            <section className="bg">
+              <div className="wave wave1"></div>
+              <div className="wave wave2"></div>
+              <div className="wave wave3"></div>
+              <div className="wave wave4"></div>
+            </section>
           </div>
         </Route>
       </Switch>

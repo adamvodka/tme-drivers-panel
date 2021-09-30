@@ -2,4 +2,38 @@
   &__container {
     padding-top: 20px;
   }
+  .searchBar {
+    position: relative;
+    input {
+      padding: 10px 20px;
+      border: 1px solid lightgrey;
+      border-radius: 5px;
+    }
+    img {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      transition: opacity 0.5s ease;
+      &.visible {
+        opacity: 1;
+      }
+      &.hidden {
+        opacity: 0;
+      }
+    }
+  }
+  .table__container {
+    margin-top: 20px;
+    height: 80vh;
+    overflow-y: scroll;
+    & {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
 }

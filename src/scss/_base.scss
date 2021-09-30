@@ -1,6 +1,13 @@
 @import "./_breakpoints.scss";
 @import "./_margins.scss";
 
+// html {
+//   overflow-y: scroll;
+// }
+
+// .app {
+//   padding-left: calc(100vw - 100%);
+// }
 .app > .tme {
   max-width: 1366px;
   margin: 0 auto;
