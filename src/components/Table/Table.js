@@ -40,6 +40,12 @@ export const Table = () => {
       : drivers;
   };
 
+  const sortedFavourite = () => {
+    drivers.sort(function (x, y) {
+      return x.isFavourite === y.isFavourite ? 0 : x ? -1 : 1;
+    });
+  };
+
   const clearSearchHandler = () => {
     setSearchTerm("");
   };
