@@ -1,0 +1,35 @@
+@import "./_breakpoints.scss";
+@import "./_margins.scss";
+@import "./colors";
+
+.app {
+  background-color: $white;
+}
+.app > .tme {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+* > .wrapper {
+  position: relative;
+  margin: 0 $sideMargin 0;
+  height: 100vh;
+  @include breakpoint(mobile) {
+    margin: 0 $sideMarginMobile 0;
+    grid-template-columns: repeat(4, [col-start] 1fr);
+  }
+}
+
+button {
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 15px;
+  background-color: $gray;
+  color: $blue;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $blue;
+    color: $gray;
+  }
+}
