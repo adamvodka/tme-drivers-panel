@@ -36,6 +36,13 @@ export const TableRow = ({
 
   const favouriteHandler = () => {
     setFavourite(!favourite);
+    const drivers = JSON.parse(localStorage.getItem("drivers"));
+    const driver = drivers.find((driver) => driver._id === _id);
+
+    driver.isFavourite = !isFavourite;
+
+    localStorage.setItem("drivers", JSON.stringify(drivers));
+    console.log(driver);
   };
 
   const hiddenHandler = () => {
