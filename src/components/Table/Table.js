@@ -1,12 +1,29 @@
 import "./Table.scss";
 
+import { useEffect, useState } from "react";
+
 import { TableRow } from "../TableRow/TableRow";
 import closeico from "../../img/close-circle.svg";
-import { data as drivers } from "../../database/data";
-import { useState } from "react";
+import { data } from "../../database/data";
 
 export const Table = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [drivers, setDrivers] = useState([]);
+
+  useEffect(() => {
+    if (window.localStorage.length === 0) {
+      const json = JSON.stringify(data);
+      localStorage.setItem("drivers", json);
+    }
+  }, [drivers]);
+
+  useEffect(() => {
+    const json = localStorage.getItem("drivers");
+    const savedDrivers = JSON.parse(json);
+    if (savedDrivers) {
+      setDrivers(savedDrivers);
+    }
+  }, []);
 
   const filteredDrivers = () => {
     return drivers && searchTerm !== ""
@@ -22,6 +39,7 @@ export const Table = () => {
         )
       : drivers;
   };
+
   const clearSearchHandler = () => {
     setSearchTerm("");
   };

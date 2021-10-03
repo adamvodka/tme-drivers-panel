@@ -13,7 +13,9 @@ function TME() {
                 <h1 className="App-logo">TME.eu</h1>
               </li>
               <li>
-                <button>usuń kierowców</button>
+                <button onClick={() => localStorage.clear()}>
+                  wyzeruj kierowców
+                </button>
               </li>
             </ul>
           </nav>

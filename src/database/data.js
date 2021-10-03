@@ -2,7 +2,7 @@ export const data = [
   {
     _id: "6155f09b47e271cc7992c99a",
     index: 0,
-    isFavourite: false,
+    isFavourite: true,
     picture: "https://picsum.photos/200?random=624",
     name: "Montgomery",
     surname: "Petersen",
@@ -30,7 +30,7 @@ export const data = [
   {
     _id: "6155f09be32a1d49257c8f7b",
     index: 2,
-    isFavourite: false,
+    isFavourite: true,
     picture: "https://picsum.photos/200?random=422",
     name: "Tania",
     surname: "Russell",
