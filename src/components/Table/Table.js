@@ -32,11 +32,14 @@ export const Table = () => {
         <h2>Drivers</h2>
         <div className="searchBar">
           <input
+            className={searchTerm === "" ? "" : "active"}
             type="text"
-            placeholder="Szukaj..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+          <span className={searchTerm === "" ? "" : "focus"}>
+            Znajdź kierowce
+          </span>
           <img
             src={closeico}
             alt=""

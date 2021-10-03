@@ -27,6 +27,7 @@ button {
   background-color: $gray;
   color: $blue;
   transition: all 0.3s;
+  text-transform: uppercase;
   &:hover {
     background-color: $blue;
     color: $gray;
