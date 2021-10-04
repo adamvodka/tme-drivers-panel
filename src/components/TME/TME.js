@@ -13,7 +13,7 @@ function TME() {
                 <h1 className="App-logo">TME.eu</h1>
               </li>
               <li>
-                <a href="#">
+                <a href="">
                   <button onClick={() => localStorage.clear()}>
                     wyzeruj ulubione
                   </button>
