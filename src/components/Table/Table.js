@@ -40,12 +40,6 @@ export const Table = () => {
       : drivers;
   };
 
-  const sortedFavourite = () => {
-    drivers.sort(function (x, y) {
-      return x.isFavourite === y.isFavourite ? 0 : x ? -1 : 1;
-    });
-  };
-
   const clearSearchHandler = () => {
     setSearchTerm("");
   };
@@ -74,9 +68,11 @@ export const Table = () => {
       </header>
       <main className="table__container">
         <ul>
-          {filteredDrivers().map((driver) => {
-            return <TableRow {...driver} key={driver._id} />;
-          })}
+          {filteredDrivers()
+            .sort((driver) => (driver.isFavourite ? -1 : 1))
+            .map((driver) => {
+              return <TableRow {...driver} key={driver._id} />;
+            })}
         </ul>
       </main>
     </div>
